@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from "electron";
+import { app, BrowserWindow, Menu } from "electron";
 import path from "path"
 import { fileURLToPath } from "url";
 
@@ -11,25 +11,26 @@ function createWindow(){
         width:1200,
         height:800,
         minWidth:800,
-        minHeight:600
+        minHeight:600,
     })
 
-  //  window.webContents.openDevTools();
+   //window.webContents.openDevTools();
     const indexPath  = path.join(app.getAppPath(),"build","index.html")
- //   if (app.isPackaged){
+    if (app.isPackaged){
         console.log(indexPath)
         window.loadFile(indexPath).catch((err)=>{
             console.log("failed load file",err)
         })
-    // } else{
-    //     window.loadURL("http://localhost:5173/")
-    // }
+    } else{
+        window.loadURL("http://localhost:5173/")
+    }
 }catch(err){
     console.log("err: ",err)
 }
 }
 
 app.whenReady().then(()=>{
+    Menu.setApplicationMenu(null)
     createWindow();
     app.on("activate",()=>{
        if (BrowserWindow.getAllWindows().length==0){
