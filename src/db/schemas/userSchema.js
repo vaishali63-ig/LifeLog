@@ -3,8 +3,9 @@ export const defaultUser = {
     id:1,
     name:"",
     email:"",
+    dateOfBirth:"",
     bio:"",
-    profileImage:defaultImage,
+    profileImage:null,
     createdAt:new Date(),
     updatedAt:new Date()
 }

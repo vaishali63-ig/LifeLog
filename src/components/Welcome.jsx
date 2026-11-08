@@ -16,7 +16,7 @@ const WelCome = ({setUserData})=>{
         }
     }
     return (
-        <div className="fixed inset-0 z-[999] flex justify-center items-center bg-black/2">
+        <div className="fixed inset-0 z-[999] flex justify-center items-center bg-black/10">
             <div className="w-[50%] rounded-lg shadow-lg border border-zinc-200 bg-white flex flex-col items-center p-4 gap-4 justify-between">
                 <div className="flex flex-col items-center gap-4 w-[100%]">
                    <p className="text-lg font-semibold text-purple-900">WELCOME TO LIFELOG</p>

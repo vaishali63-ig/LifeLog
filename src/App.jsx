@@ -29,7 +29,7 @@ function App() {
           <WelCome setUserData={setUser}/>
         )
        }
-       <div className='flex w-[100%] h-[100%]'>
+       <div className='flex w-[100%] h-[92.9%]'>
          <div className='w-[18%] border-r border-zinc-200 p-2'>
             <SideBar/>
          </div>
@@ -37,7 +37,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home/>}/>
             <Route path='/blogs' element={<Blog/>}/>
-            <Route path='/profile' element={<Profile user={user}/>}/>
+            <Route path='/profile' element={<Profile user={user} setUser={setUser}/>}/>
           </Routes>
         </div>
        </div>
