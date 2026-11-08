@@ -1,6 +1,8 @@
 const Home = ()=>{
     return (
-        <div>Home</div>
+        <div className="p-1">
+          home  
+        </div>
     )
 }
 export default Home;

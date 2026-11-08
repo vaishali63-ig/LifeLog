@@ -14,7 +14,7 @@ function createWindow(){
         minHeight:600,
     })
 
-   //window.webContents.openDevTools();
+   window.webContents.openDevTools();
     const indexPath  = path.join(app.getAppPath(),"build","index.html")
     if (app.isPackaged){
         console.log(indexPath)
