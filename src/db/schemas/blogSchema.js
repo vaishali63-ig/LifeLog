@@ -1,6 +1,6 @@
 export const defaultBlog = {
     id:1,
-    title:"draft blog",
+    title:"",
     description:"",
     tages:[],
     images:[],

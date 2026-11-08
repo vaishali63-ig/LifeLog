@@ -4,18 +4,27 @@ import NabBar from './components/NavBar'
 import { Route, Routes } from 'react-router'
 import Home from './pages/Home'
 import WelCome from './components/Welcome'
-import { deleteUser, getUser } from './db/services/userService'
+import { getUser } from './db/services/userService'
 import SideBar from './components/SideBar'
 import Blog from './pages/Blog'
 import Profile from './pages/Profile'
+import { getAllBlogs } from './db/services/blogService'
 
 function App() {
   const [user,setUser] = useState(null)
+  const [blogs,setBlogs] = useState([])
+    useEffect(()=>{
+      const getBlogs = async()=>{
+        const blogs = await getAllBlogs();
+        setBlogs(blogs||[])
+        console.log(blogs)
+      }
+      getBlogs()
+    },[])
   useEffect(()=>{
 
       const getData = async ()=>{
       const user = await getUser();
-      console.log("user",user);
       setUser(user)
       }
       getData();
@@ -36,7 +45,7 @@ function App() {
          <div className='w-[100%] h-[100%]'>
           <Routes>
             <Route path='/' element={<Home/>}/>
-            <Route path='/blogs' element={<Blog/>}/>
+            <Route path='/blogs' element={<Blog blogs={blogs} setBlogs={setBlogs} />}/>
             <Route path='/profile' element={<Profile user={user} setUser={setUser}/>}/>
           </Routes>
         </div>
