@@ -1,16 +1,40 @@
-# React + Vite
+# LifeLog
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Lifelog is a personal digital diary application where you can share your daily moments, thoughts and experiences
 
-Currently, two official plugins are available:
+## Features
+- create new lifelogs
+- save images (upto 5 per lifelog)
+- view all previous lifelogs
+- delete previous logs
+- clean profile section
+- local data storage (private and personal)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
+- react.js
+- tailwindcss
+- electron.js
+- dexie (For local database)
 
-## React Compiler
+## Getting Started
+Clone the repository:
+```
+git clone https://github.com/vaishali63-ig/LifeLog.git
+cd lifelog
+```
+Install Dependencies:
+```
+npm install
+```
+Run In Development Mode:
+```
+npm run electron:dev
+```
+Build Application:
+```
+npm run dist
+```
+the generated desktop application will be availible inside the release folder.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## About
+LifeLog is a simple desktop application to save daily life memories and special moments
