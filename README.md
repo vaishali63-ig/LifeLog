@@ -37,4 +37,4 @@ npm run dist
 the generated desktop application will be availible inside the release folder.
 
 ## About
-LifeLog is a simple desktop application to save daily life memories and special moments
+LifeLog is a simple desktop application to save daily life memories and special moments. It acts as a personal digital diary to keep memories forever like writing a diary diary

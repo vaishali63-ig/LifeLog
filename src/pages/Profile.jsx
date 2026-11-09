@@ -10,6 +10,25 @@ const Profile = ({user,setUser})=>{
     useEffect(()=>{
         setResponse({message:"",status:"",output:""})
     },[currUser])
+
+    let [profileImage,setProfileImage] = useState(profile)
+        useEffect(()=>{
+          let objectUrl
+          try{
+            if(!currUser?.profileImage){
+              setProfileImage(profile)
+              return;
+            }
+            objectUrl = currUser?.profileImage?URL.createObjectURL(currUser?.profileImage)||"":profile;
+            setProfileImage(objectUrl)
+          }catch(err){
+            console.log("err image loading: ",err)
+          }
+          return ()=>{
+            if (objectUrl) URL.revokeObjectURL(objectUrl)
+          }
+        },[user,currUser])
+
     const handleUserUpdate = async ()=>{
        try{
         setResponse({message:"saving data...",status:"loading"})
@@ -26,7 +45,7 @@ const Profile = ({user,setUser})=>{
         <div className="p-1 h-[100%] w-[100%] flex flex-col items-center justify-center">
             {profileEdit&& <EditProfile setProfileEdit={setProfileEdit} user={currUser} setUser={setCurrUser}/>}
             <div className="flex flex-col gap-2 items-center p-5">
-                <img onClick={()=>{setProfileEdit(true)}} className="cursor-pointer shadow shadow-purple-500 w-[10rem] h-[10rem] rounded-[100%]" src={currUser?.profileImage?URL.createObjectURL(currUser?.profileImage)||"":profile} alt="" />
+                <img onClick={()=>{setProfileEdit(true)}} className="cursor-pointer shadow shadow-purple-500 w-[10rem] h-[10rem] rounded-[100%]" src={profileImage} alt="" />
                 <p className="text-center text-lg font-semibold text-purple-900">{user?.name||""}</p>
             </div>
 

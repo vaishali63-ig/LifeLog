@@ -17,7 +17,7 @@ function App() {
       const getBlogs = async()=>{
         const blogs = await getAllBlogs();
         setBlogs(blogs||[])
-        console.log(blogs)
+        //console.log(blogs)
       }
       getBlogs()
     },[])
