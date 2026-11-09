@@ -1,7 +1,7 @@
 import db from "../db"
 
 export const getAllBlogs= async ()=>{
-   return await db.blogs.toArray();
+   return await db.blogs.orderBy("createdAt").reverse().toArray();
 }
 
 export const getBlogById = async(id)=>{

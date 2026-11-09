@@ -1,9 +1,6 @@
 import { app, BrowserWindow, Menu } from "electron";
 import path from "path"
-import { fileURLToPath } from "url";
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
 
 function createWindow(){
     try{
@@ -14,7 +11,7 @@ function createWindow(){
         minHeight:600,
     })
 
-   window.webContents.openDevTools();
+//    window.webContents.openDevTools();
     const indexPath  = path.join(app.getAppPath(),"build","index.html")
     if (app.isPackaged){
         console.log(indexPath)

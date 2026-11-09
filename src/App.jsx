@@ -44,7 +44,7 @@ function App() {
          </div>
          <div className='w-[100%] h-[100%]'>
           <Routes>
-            <Route path='/' element={<Home/>}/>
+            <Route path='/' element={<Home user={user} blogs={blogs} />}/>
             <Route path='/blogs' element={<Blog blogs={blogs} setBlogs={setBlogs} />}/>
             <Route path='/profile' element={<Profile user={user} setUser={setUser}/>}/>
           </Routes>
